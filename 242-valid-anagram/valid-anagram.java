@@ -18,10 +18,13 @@ class Solution {
             mapt.put(t.charAt(i),mapt.getOrDefault(t.charAt(i),0)+1);
         }
       
-        // for(char c:maps.keySet()){
-        //     if(maps.getOrDefault(c,0) != mapt.getOrDefault(c,0)) return false;
-        // }
+         for (char c : maps.keySet()) {
+            if (!maps.get(c).equals(mapt.getOrDefault(c, 0))) {
+                return false;
+            }
+        }
 
-        return maps.equals(mapt);
+        //return maps.equals(mapt);
+        return true;
     }
 }
